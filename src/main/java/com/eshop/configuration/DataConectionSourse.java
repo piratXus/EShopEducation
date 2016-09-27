@@ -1,12 +1,13 @@
 package com.eshop.configuration;
 
 import org.apache.tomcat.jdbc.pool.PoolProperties;
+import org.apache.tomcat.jdbc.pool.DataSource;
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 
 /**
  * Created by raks on 21.09.16.
@@ -16,9 +17,9 @@ public class DataConectionSourse {
 
     @Bean(destroyMethod = "close")
     public DataSource dataSource(){
-        org.apache.tomcat.jdbc.pool.DataSource ds = new org.apache.tomcat.jdbc.pool.DataSource();
+        DataSource ds = new DataSource();
         PoolProperties p = new PoolProperties();
-        p.setUrl("jdbc:mysql://localhost:3306/eshop");
+        p.setUrl("jdbc:mysql://127.0.0.1:3306/eshop");
         p.setDriverClassName("com.mysql.jdbc.Driver");
         p.setUsername("root");
         p.setPassword("root123");
@@ -41,12 +42,12 @@ public class DataConectionSourse {
                 "org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;"+
                         "org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer");
         ds.setPoolProperties(p);
-        System.out.println("Connection!!!");
+        System.out.println(ds);
         return ds;
     }
 
     @Bean
-    public JdbcOperations getJdbcTemplateWithDataSource(){
+    public JdbcOperations jdbcOperations(){
         return new JdbcTemplate(dataSource());
     }
 }

@@ -1247,4 +1247,117 @@
     <procedure name="version_minor" schema="" catalog="sys" type="2" remarks="CiBEZXNjcmlwdGlvbgogCiBSZXR1cm5zIHRoZSBtaW5vciAocmVsZWFzZSBzZXJpZXMpIHZlcnNpb24gb2YgTXlTUUwgU2VydmVyLgogCiBSZXR1cm5zCiAKIFRJTllJTlQgVU5TSUdORUQKIAogRXhhbXBsZQogCiBteXNxbD4gU0VMRUNUIFZFUlNJT04oKSwgc3lzLnNlcnZlcl9taW5vcigpOwogKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLSsKIHwgVkVSU0lPTigpICAgICAgICAgICAgICAgICAgICAgICAgICAgIHwgc3lzLnZlcnNpb25fbWlub3IoKSB8CiArLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwogfCA1LjcuOS1lbnRlcnByaXNlLWNvbW1lcmNpYWwtYWR2YW5jZWQgfCA3ICAgICAgICAgICAgICAgICAgIHwKICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0rCiAxIHJvdyBpbiBzZXQgKDAuMDAgc2VjKQog"/>
     <procedure name="version_patch" schema="" catalog="sys" type="2" remarks="CiBEZXNjcmlwdGlvbgogCiBSZXR1cm5zIHRoZSBwYXRjaCByZWxlYXNlIHZlcnNpb24gb2YgTXlTUUwgU2VydmVyLgogCiBSZXR1cm5zCiAKIFRJTllJTlQgVU5TSUdORUQKIAogRXhhbXBsZQogCiBteXNxbD4gU0VMRUNUIFZFUlNJT04oKSwgc3lzLnZlcnNpb25fcGF0Y2goKTsKICstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0rCiB8IFZFUlNJT04oKSAgICAgICAgICAgICAgICAgICAgICAgICAgICB8IHN5cy52ZXJzaW9uX3BhdGNoKCkgfAogKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLSsKIHwgNS43LjktZW50ZXJwcmlzZS1jb21tZXJjaWFsLWFkdmFuY2VkIHwgOSAgICAgICAgICAgICAgICAgICB8CiArLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tKwogMSByb3cgaW4gc2V0ICgwLjAwIHNlYykKIA=="/>
   </data-source>
+  <data-source name="MySQL - eshop@localhost" uuid="3e5454ca-98b3-4bcd-98d8-680267efd96b">
+    <database-info product="MySQL" version="5.7.15-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="eshop"/>
+    <table name="basket" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_goods" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_user" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_seller" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="count_things" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="price_things" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="basket_ibfk_1" columns="id_seller" ref-table="seller" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="basket_ibfk_2" columns="id_user" ref-table="user" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="basket_ibfk_3" columns="id_goods" ref-table="goods" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="common_dict" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dict_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="value" sqlType="VARCHAR" precision="4000" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="company" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="goods_ibfk_1" table="goods" schema="" catalog="eshop" columns="id_company"/>
+    </table>
+    <table name="content_info" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="category" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="content" sqlType="VARCHAR" precision="4000" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="seller_ibfk_1" table="seller" schema="" catalog="eshop" columns="id_content_info"/>
+    </table>
+    <table name="goods" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_company" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_img" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="description" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="title" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="price" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="goods_ibfk_1" columns="id_company" ref-table="company" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="goods_ibfk_2" columns="id_img" ref-table="img" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="basket_ibfk_3" table="basket" schema="" catalog="eshop" columns="id_goods"/>
+      <exported-key name="goods_seller_ibfk_2" table="goods_seller" schema="" catalog="eshop" columns="id_goods"/>
+      <exported-key name="orders_ibfk_2" table="orders" schema="" catalog="eshop" columns="id_goods"/>
+    </table>
+    <table name="goods_seller" schema="" catalog="eshop" type="TABLE">
+      <column name="id_seller" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_goods" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="count_things" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="status_goods" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <foreign-key name="goods_seller_ibfk_1" columns="id_seller" ref-table="seller" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="goods_seller_ibfk_2" columns="id_goods" ref-table="goods" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="img" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="picture" sqlType="LONGBLOB" precision="2147483647" scale="0" nullable="true" jdbcType="-4"/>
+      <column name="alt" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="goods_ibfk_2" table="goods" schema="" catalog="eshop" columns="id_img"/>
+      <exported-key name="seller_ibfk_2" table="seller" schema="" catalog="eshop" columns="id_img"/>
+    </table>
+    <table name="orders" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id_goods" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_user" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_seller" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="status_order" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="count_things" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="price" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="orders_ibfk_1" columns="id_user" ref-table="user" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="orders_ibfk_2" columns="id_goods" ref-table="goods" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="orders_ibfk_3" columns="id_seller" ref-table="seller" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="seller" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="full_name" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id_content_info" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_img" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="seller_ibfk_1" columns="id_content_info" ref-table="content_info" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="seller_ibfk_2" columns="id_img" ref-table="img" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="basket_ibfk_1" table="basket" schema="" catalog="eshop" columns="id_seller"/>
+      <exported-key name="goods_seller_ibfk_1" table="goods_seller" schema="" catalog="eshop" columns="id_seller"/>
+      <exported-key name="orders_ibfk_3" table="orders" schema="" catalog="eshop" columns="id_seller"/>
+    </table>
+    <table name="user" schema="" catalog="eshop" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="role" sqlType="VARCHAR" precision="1000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="4000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="surname" sqlType="VARCHAR" precision="4000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="coutry" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="area" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="region" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="street" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="house" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address_info" sqlType="VARCHAR" precision="2000" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="basket_ibfk_2" table="basket" schema="" catalog="eshop" columns="id_user"/>
+      <exported-key name="orders_ibfk_1" table="orders" schema="" catalog="eshop" columns="id_user"/>
+    </table>
+  </data-source>
 </component>

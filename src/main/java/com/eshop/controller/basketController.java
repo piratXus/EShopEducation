@@ -1,6 +1,8 @@
 package com.eshop.controller;
 
 import com.eshop.someData.basketData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestAttribute;
@@ -15,9 +17,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class basketController {
 
+    @Autowired
+    basketData basketData;
+
     @RequestMapping(value="/basket", method= RequestMethod.GET)
     public ModelAndView Basket(ModelAndView modelAndView){
-        modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", new basketData().basketDataRet()));
+        modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.basketDataRet()));
         modelAndView.setViewName("basket");
         return modelAndView;
     }
@@ -25,7 +30,7 @@ public class basketController {
     @RequestMapping(value="/basket", method= RequestMethod.POST)
     public ModelAndView BasketDelete(@RequestParam("key") String basket,ModelAndView modelAndView){
         System.out.println(basket);
-        modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", new basketData().basketDataRet()));
+        modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.basketDataRet()));
         modelAndView.setViewName("basket");
         return modelAndView;
     }

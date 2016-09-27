@@ -7,5 +7,11 @@
       <schema-pattern>sys.*</schema-pattern>
       <default-schemas>sys.*</default-schemas>
     </data-source>
+    <data-source name="MySQL - eshop@localhost" uuid="3e5454ca-98b3-4bcd-98d8-680267efd96b">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>eshop.*</schema-pattern>
+      <default-schemas>eshop.*</default-schemas>
+    </data-source>
   </component>
 </project>

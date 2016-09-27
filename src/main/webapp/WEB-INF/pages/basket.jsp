@@ -17,8 +17,9 @@
   <c:forEach items="${goodsInBasket}" var="map">
 
       <form action="/basket" method="post">
-          <h4>${map.value}</h4>
-          <input type="hidden" value="${map.key}" name="key"/>
+          <div>
+            <h4>${map.getId_user()}</h4> <h4>${map.getPrice_things()}</h4> <h4>${map.getCount_things()}</h4> <h4>${map.getId_seller()}</h4></div>
+          <input type="hidden" value="${map.getId()}" name="key"/>
           <button type="submit" value="Delete"></button>
       </form>
 
