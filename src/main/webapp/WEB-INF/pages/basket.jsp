@@ -14,16 +14,22 @@
 </head>
 <body>
   <h1>Menu vertical</h1>
+  <% if ("${goodsInBasket}".length()!=0) {%>
   <c:forEach items="${goodsInBasket}" var="map">
 
       <form action="/basket" method="post">
           <div>
-            <h4>${map.getId_user()}</h4> <h4>${map.getPrice_things()}</h4> <h4>${map.getCount_things()}</h4> <h4>${map.getId_seller()}</h4></div>
+            <h4 style="display: inline-block">${map.getId_user()}</h4>
+            <h4 style="display: inline-block">${map.getPrice_things()}</h4>
+            <h4 style="display: inline-block">${map.getCount_things()}</h4> <h4>${map.getId_seller()}</h4>
+          </div>
           <input type="hidden" value="${map.getId()}" name="key"/>
-          <button type="submit" value="Delete"></button>
+          <button type="submit" value="Delete">Delete</button>
       </form>
 
   </c:forEach>
-
+<%} else {%>
+    <h2>У вас нет товаров в корзине.</h2>
+<% } %>
 </body>
 </html>
