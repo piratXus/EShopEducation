@@ -14,9 +14,8 @@
 </head>
 <body>
   <h1>Menu vertical</h1>
-  <% if ("${goodsInBasket}".length()!=0) {%>
-  <c:forEach items="${goodsInBasket}" var="map">
-
+  <c:if test="${!(goodsInBasket.isEmpty())}">
+    <c:forEach items="${goodsInBasket}" var="map">
       <form action="/basket" method="post">
           <div>
             <h4 style="display: inline-block">${map.getId_user()}</h4>
@@ -26,10 +25,11 @@
           <input type="hidden" value="${map.getId()}" name="key"/>
           <button type="submit" value="Delete">Delete</button>
       </form>
+    </c:forEach>
+  </c:if>
 
-  </c:forEach>
-<%} else {%>
+<c:if test="${goodsInBasket.isEmpty()}">
     <h2>У вас нет товаров в корзине.</h2>
-<% } %>
+</c:if>
 </body>
 </html>

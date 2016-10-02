@@ -1,8 +1,6 @@
 package com.eshop.controller;
 
-import com.eshop.someData.CollectData;
-import com.sun.org.apache.xpath.internal.operations.String;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.eshop.dataTO.CollectData;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CookieValue;

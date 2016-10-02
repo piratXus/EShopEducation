@@ -21,6 +21,14 @@ public class Basket {
 
     private int price_things;
 
+    public int getId_goods() {
+        return id_goods;
+    }
+
+    public void setId_goods(int id_goods) {
+        this.id_goods = id_goods;
+    }
+
     public int getId_user() {
         return id_user;
     }
