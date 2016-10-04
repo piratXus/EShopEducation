@@ -14,7 +14,7 @@ import java.util.Map;
  * Created by raks on 20.09.16.
  */
 @Component
-public class BasketData {
+public class BasketData{
 
     private JdbcTemplate jdbcTemplate;
 
