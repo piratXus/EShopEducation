@@ -15,15 +15,16 @@
 <body>
   <h1>Menu vertical</h1>
   <c:if test="${!(goodsInBasket.isEmpty())}">
-    <c:forEach items="${goodsInBasket}" var="map">
-      <form action="/basket" method="post">
+    <c:forEach items="${goodsInBasket}" var="basket">
+      <form action="/deletebasket" method="post">
           <div>
-            <h4 style="display: inline-block">${map.getId_user()}</h4>
-            <h4 style="display: inline-block">${map.getPrice_things()}</h4>
-            <h4 style="display: inline-block">${map.getCount_things()}</h4> <h4>${map.getId_seller()}</h4>
+              <h4 style="display: inline-block">${basket.getName_seller()}</h4>
+              <h4 style="display: inline-block">${basket.getName_goods()}</h4>
+              <h4 style="display: inline-block">${basket.getPrice_things()}</h4>
+              <h4 style="display: inline-block">${basket.getCount_things()}</h4>
+              <input type="hidden" value="${basket}" name="key"/>
+              <button type="submit" value="Delete" style="display: inline-block">Delete</button>
           </div>
-          <input type="hidden" value="${map.getId()}" name="key"/>
-          <button type="submit" value="Delete">Delete</button>
       </form>
     </c:forEach>
   </c:if>

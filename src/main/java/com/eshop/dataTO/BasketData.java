@@ -6,7 +6,6 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,14 +33,16 @@ public class BasketData implements BasketDataInterface{
             basket.setName_goods(String.valueOf(row.get("NAME_GOODS")));
             basket.setPrice_things(Integer.parseInt(String.valueOf(row.get("PRICE_THINGS"))));
             basket.setCount_things(Integer.parseInt(String.valueOf(row.get("COUNT_THINGS"))));
-            data.add(basket);
+            dataList.add(basket);
         }
-        return data;
+        return dataList;
     }
     @Override
-    public List deleteItemUser(Long id_user, int id_goods){
+    public List deleteItemUser(Long id_user, Basket basket){
         System.out.println("Delete Item in table basket!");
-        jdbcTemplate.update(deleteQuery, new Object[] {id_user, id_goods});
-        return findAllItemsForUser(id_user);
+        jdbcTemplate.update(deleteQuery, new Object[] {id_user, basket.getId()});
+        dataList.remove(basket);
+        System.out.println(dataList.isEmpty());
+        return dataList;
     }
 }

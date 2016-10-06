@@ -1,6 +1,7 @@
 package com.eshop.controller;
 
-import com.eshop.dataTO.BasketData;
+import com.eshop.Interface.BasketDataInterface;
+import com.eshop.model.Basket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class BasketController {
 
     @Autowired
-    BasketData basketData;
+    BasketDataInterface basketData;
 
     @RequestMapping(value="/basket", method= RequestMethod.GET)
     public ModelAndView Basket(ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
@@ -23,8 +24,8 @@ public class BasketController {
         return modelAndView;
     }
 
-    @RequestMapping(value="/basket", method= RequestMethod.POST)
-    public ModelAndView BasketDelete(@RequestParam("key") int basket,ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
+    @RequestMapping(value="/deletebasket", method= RequestMethod.POST)
+    public ModelAndView BasketDelete(@RequestParam("key") Basket basket,ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
         System.out.println(basket);
         modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.deleteItemUser(userCookie, basket)));
         modelAndView.setViewName("basket");

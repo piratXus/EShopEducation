@@ -1,12 +1,18 @@
 package com.eshop.model;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by raks on 22.09.16.
+ *@Scope include String params are: singleton (только один экземпляр бина создается для IoC контейнера; значение по умолчанию )
+ * , prototype (создается новый экземпляр бина когда приходит запрос на его создание)
+ * , request (один экземпляр бина для каждого HTTP запроса ), session (один экземпляр бина для каждой сессии)
+ * , globalSession (один экземпляр бина для каждой глобальной сессии)
  */
 @Component
+@Scope("prototype")
 public class Basket {
 
     private int id;

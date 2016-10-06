@@ -16,13 +16,13 @@
   <h1>Menu vertical</h1>
   <c:if test="${!(goodsInBasket.isEmpty())}">
     <c:forEach items="${goodsInBasket}" var="basket">
-      <form action="/basket" method="post">
+      <form action="/deletebasket" method="post">
           <div>
               <h4 style="display: inline-block">${basket.getName_seller()}</h4>
               <h4 style="display: inline-block">${basket.getName_goods()}</h4>
               <h4 style="display: inline-block">${basket.getPrice_things()}</h4>
               <h4 style="display: inline-block">${basket.getCount_things()}</h4>
-              <input type="hidden" value="${basket.getId()}" name="key"/>
+              <input type="hidden" value="${basket}" name="key"/>
               <button type="submit" value="Delete" style="display: inline-block">Delete</button>
           </div>
       </form>
