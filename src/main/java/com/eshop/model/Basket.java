@@ -11,46 +11,37 @@ public class Basket {
 
     private int id;
 
-    private int id_goods;
+    private String name_goods;
 
-    private int id_user;
+    private String full_user;
 
-    private int id_seller;
+    private String name_seller;
 
     private int count_things;
 
     private int price_things;
 
-    public int getId_goods() {
-        return id_goods;
+    public int getId() {
+        return id;
     }
 
-    public void setId_goods(int id_goods) {
-        this.id_goods = id_goods;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getId_user() {
-        return id_user;
+    public String getName_goods() {
+        return name_goods;
     }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
+    public void setName_goods(String name_goods) {
+        this.name_goods = name_goods;
+    }
+    public String getFull_user() {
+        return full_user;
     }
 
-    public int getId_seller() {
-        return id_seller;
-    }
-
-    public void setId_seller(int id_seller) {
-        this.id_seller = id_seller;
-    }
-
-    public int getCount_things() {
-        return count_things;
-    }
-
-    public void setCount_things(int count_things) {
-        this.count_things = count_things;
+    public void setFull_user(String full_user) {
+        this.full_user = full_user;
     }
 
     public int getPrice_things() {
@@ -61,12 +52,19 @@ public class Basket {
         this.price_things = price_things;
     }
 
-    public int getId() {
-
-        return id;
+    public int getCount_things() {
+        return count_things;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCount_things(int count_things) {
+        this.count_things = count_things;
+    }
+
+    public String getName_seller() {
+        return name_seller;
+    }
+
+    public void setName_seller(String name_seller) {
+        this.name_seller = name_seller;
     }
 }
