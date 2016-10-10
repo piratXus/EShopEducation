@@ -2,7 +2,6 @@ package com.eshop.Interface;
 
 import com.eshop.model.Basket;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.List;
  * Created by User on 06.10.2016.
  */
 @Scope("session")
-public interface BasketDataInterface {
+public interface BasketDataService {
     List<Basket> dataList = new ArrayList<>();
     String deleteQuery = "DELETE from basket where id_user = ? and id_goods = ?";
     String querySelect = "SELECT id ID,(select name  from seller where id = basket.id_seller) NAME_SELLER," +

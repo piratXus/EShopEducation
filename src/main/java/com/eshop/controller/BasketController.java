@@ -1,6 +1,6 @@
 package com.eshop.controller;
 
-import com.eshop.Interface.BasketDataInterface;
+import com.eshop.Interface.BasketDataService;
 import com.eshop.model.Basket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class BasketController {
 
     @Autowired
-    BasketDataInterface basketData;
+    BasketDataService basketData;
 
     @RequestMapping(value="/basket", method= RequestMethod.GET)
     public ModelAndView Basket(ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){

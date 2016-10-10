@@ -1,6 +1,6 @@
 package com.eshop.dataTO;
 
-import com.eshop.Interface.BasketDataInterface;
+import com.eshop.Interface.BasketDataService;
 import com.eshop.model.Basket;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,11 +13,11 @@ import java.util.Map;
  * Created by raks on 20.09.16.
  */
 @Component
-public class BasketData implements BasketDataInterface{
+public class BasketDataServiceImpl implements BasketDataService {
 
     private JdbcTemplate jdbcTemplate;
 
-    public BasketData(JdbcOperations jdbcOperations){
+    public BasketDataServiceImpl(JdbcOperations jdbcOperations){
         this.jdbcTemplate = (JdbcTemplate) jdbcOperations;
     }
 
