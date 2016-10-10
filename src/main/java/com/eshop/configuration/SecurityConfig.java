@@ -32,6 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/resources/**", "/**").permitAll()
                 .antMatchers("/basket").permitAll()
                 .antMatchers("/deletebasket").permitAll()
+                .anyRequest().authenticated()
                 .and();
     }
 }
