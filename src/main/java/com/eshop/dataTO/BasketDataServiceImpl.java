@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by raks on 20.09.16.
@@ -44,5 +45,11 @@ public class BasketDataServiceImpl implements BasketDataService {
         dataList.remove(basket);
         System.out.println(dataList.isEmpty());
         return dataList;
+    }
+
+    @Override
+    public String addItemUserInBasket(Long id_user, Objects objects){
+        jdbcTemplate.update(insertQuery, new Object[]{objects.hashCode()});
+        return "Success insert";
     }
 }

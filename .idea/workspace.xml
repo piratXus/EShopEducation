@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="901c6719-38ae-48e1-ba40-81ae76dfafce" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/eshop/Interface/BasketDataInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketData.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/eshop/configuration/SecurityConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/eshop/configuration/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/eshop/controller/BasketController.java" afterPath="$PROJECT_DIR$/src/main/java/com/eshop/controller/BasketController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/eshop/Interface/BasketDataService.java" afterPath="$PROJECT_DIR$/src/main/java/com/eshop/Interface/BasketDataService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java" />
     </list>
     <ignored path="EShopEducation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,30 +34,6 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - eshop@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="user" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - eshop@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -79,24 +53,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basket.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="basket.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47048903">
+            <state vertical-scroll-proportion="-10.730769">
               <caret line="22" column="80" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasketDataServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BasketDataServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.7253635">
+              <caret line="51" column="75" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
               <folding>
-                <element signature="e#525#526#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
+                <element signature="e#551#552#0" expanded="true" />
+                <element signature="e#616#617#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,8 +115,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/eshop/Interface/BasketDataService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-              <folding />
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,13 +186,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/Interface/UserInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/model/UserLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/Interface/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/configuration/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eshop/Interface/BasketDataService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1311,12 +1287,12 @@
       <workItem from="1474653888601" duration="4344000" />
       <workItem from="1474658944446" duration="6786000" />
       <workItem from="1474916134632" duration="4813000" />
-      <workItem from="1475041313544" duration="38202000" />
+      <workItem from="1475041313544" duration="39730000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77290000" />
+    <option name="totallyTimeSpent" value="78818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="0" />
@@ -1734,14 +1710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eshop/Interface/BasketDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eshop/model/Basket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1753,22 +1721,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.730769">
+          <caret line="22" column="80" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eshop/Interface/BasketDataService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/basket.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47048903">
-          <caret line="22" column="80" selection-start-line="22" selection-start-column="80" selection-end-line="22" selection-end-column="80" />
-          <folding />
+        <state vertical-scroll-proportion="0.7253635">
+          <caret line="51" column="75" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
+          <folding>
+            <element signature="e#551#552#0" expanded="true" />
+            <element signature="e#616#617#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
