@@ -34,5 +34,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/deletebasket").permitAll()
                 .anyRequest().authenticated()
                 .and();
+
+        http.formLogin().loginPage("/login")
+                        .failureUrl("/login?error")
+                        .usernameParameter("j_username")
+                        .passwordParameter("j_password")
+                        .permitAll();
+
+        http.logout()
+                .permitAll()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login?logout")
+                .invalidateHttpSession(true);
     }
 }
