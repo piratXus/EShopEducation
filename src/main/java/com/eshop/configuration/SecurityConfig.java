@@ -5,10 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  * Created by User on 06.10.2016.
@@ -21,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception{
         auth
-                .inMemoryAuthentication().withUser("vasia").password("vasia123").roles("ADMIN","SUPERADMIN","BUYER").and();
+                .inMemoryAuthentication().withUser("vasia").password("vasia123").roles("ADMIN","SUPERADMIN","BUYER");
     }
 
     @Override
@@ -40,11 +37,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                         .usernameParameter("j_username")
                         .passwordParameter("j_password")
                         .permitAll();
-
         http.logout()
+                .permitAll()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/login?logout")
-                .invalidateHttpSession(true)
-                .permitAll();
+                .invalidateHttpSession(true);
+
     }
 }

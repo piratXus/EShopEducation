@@ -11,9 +11,11 @@
 <html>
 <head>
     <title>Basket</title>
+    <link href="${pageContext.request.contextPath}/resources/css/general.css" rel="stylesheet" >
 </head>
 <body>
   <h1>Menu vertical</h1>
+  <%@ include file="logout.jsp"%>
   <c:if test="${!(goodsInBasket.isEmpty())}">
     <c:forEach items="${goodsInBasket}" var="basket">
       <form action="/deletebasket" method="post">

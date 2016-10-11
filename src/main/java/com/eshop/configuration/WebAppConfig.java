@@ -6,6 +6,6 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Created by User on 10.10.2016.
  */
-@Configuration
+//@Configuration
 public class WebAppConfig {
 }
