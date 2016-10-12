@@ -12,12 +12,13 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by raks on 20.09.16.
  */
 @Controller
+@RequestMapping("/basket")
 public class BasketController {
 
     @Autowired
     BasketDataService basketData;
 
-    @RequestMapping(value="/basket", method= RequestMethod.GET)
+    @RequestMapping(value="/findbasket", method= RequestMethod.GET)
     public ModelAndView Basket(ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
         modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.findAllItemsForUser(userCookie)));
         modelAndView.setViewName("basket");
