@@ -14,7 +14,7 @@
     <log4j.version>1.2.17</log4j.version>
     <mysql.version>5.1.39</mysql.version>
     <security-web.version>4.1.3.RELEASE</security-web.version>
-    <security.version>3.1.0.RELEASE</security.version>
+    <security.version>4.1.3.RELEASE</security.version>
     <servlet.version>3.0.1</servlet.version>
   </properties>
   <dependencies>
