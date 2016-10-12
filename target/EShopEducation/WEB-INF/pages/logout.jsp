@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<form action="/j_spring_security_logout" method="post">
+<form action="<c:url value='/j_spring_security_logout'/>" method="post">
     <input type="hidden" name="_csrf.parameterName" value="_csrf.token"/>
     <input type="submit" id="logout" name="logout" value="Log out">
 </form>

@@ -15,7 +15,7 @@
 </head>
 <body>
   <h1>Menu vertical</h1>
-  <%@ include file="logout.jsp"%>
+  <%--<%@ include file="logout.jsp"%>--%>
   <c:if test="${!(goodsInBasket.isEmpty())}">
     <c:forEach items="${goodsInBasket}" var="basket">
       <form action="/deletebasket" method="post">
@@ -24,7 +24,7 @@
               <h4 style="display: inline-block">${basket.getName_goods()}</h4>
               <h4 style="display: inline-block">${basket.getPrice_things()}</h4>
               <h4 style="display: inline-block">${basket.getCount_things()}</h4>
-              <input type="hidden" value="${basket}" name="key"/>
+              <input type="hidden" value="${basket.getId()}" name="key"/>
               <button type="submit" value="Delete" style="display: inline-block">Delete</button>
           </div>
       </form>

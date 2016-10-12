@@ -25,7 +25,7 @@ public class BasketController {
     }
 
     @RequestMapping(value="/deletebasket", method= RequestMethod.POST)
-    public ModelAndView BasketDelete(@RequestParam("key") Basket basket,ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
+    public ModelAndView BasketDelete(@RequestParam("key") Integer basket,ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
         System.out.println(basket);
         modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.deleteItemUser(userCookie, basket)));
         modelAndView.setViewName("basket");

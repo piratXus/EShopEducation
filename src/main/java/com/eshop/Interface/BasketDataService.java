@@ -22,7 +22,7 @@ public interface BasketDataService {
             " FROM basket where id_user = ?";
     String insertQuery = "Insert into basket (id_goods, id_user, id_seller, count_things, price_things) values(?,?,?,?,?)";
     List findAllItemsForUser(Long id_user);
-    List deleteItemUser(Long id_user, Basket basket);
+    List deleteItemUser(Long id_user, Integer basket);
     String addItemUserInBasket(Long id_user, Objects objects);
 
 }

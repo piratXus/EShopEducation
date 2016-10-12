@@ -36,15 +36,23 @@ public class BasketDataServiceImpl implements BasketDataService {
             basket.setCount_things(Integer.parseInt(String.valueOf(row.get("COUNT_THINGS"))));
             dataList.add(basket);
         }
+        Basket basket = new Basket();
+        basket.setId(1);
+        basket.setName_goods("Ked");
+        basket.setName_seller("Bess");
+        basket.setPrice_things(12);
+        basket.setCount_things(2);
+        dataList.add(basket);
         return dataList;
     }
     @Override
-    public List deleteItemUser(Long id_user, Basket basket){
+    public List deleteItemUser(Long id_user, Integer basket){
         System.out.println("Delete Item in table basket!");
-        jdbcTemplate.update(deleteQuery, new Object[] {id_user, basket.getId()});
-        dataList.remove(basket);
+        jdbcTemplate.update(deleteQuery, new Object[] {id_user, basket});
+        dataList.removeAll(dataList);
+//        dataList.remove();
         System.out.println(dataList.isEmpty());
-        return dataList;
+        return findAllItemsForUser(id_user);
     }
 
     @Override

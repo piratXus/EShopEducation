@@ -27,16 +27,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/resources/**", "/**").permitAll()
-                .antMatchers("/basket").permitAll()
-                .antMatchers("/deletebasket").permitAll()
+                .antMatchers("/admin/**").access("hasRole('ADMIN') and hasRole('SUPERADMIN')")
                 .anyRequest().authenticated()
+//                .anyRequest().permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/errors/AccessDenied")
+                .and().formLogin().defaultSuccessUrl("/home", false)
                 .and();
-
+        System.out.println("Security config");
         http.formLogin().loginPage("/login")
-                        .failureUrl("/login?error")
-                        .usernameParameter("j_username")
-                        .passwordParameter("j_password")
-                        .permitAll();
+                .loginProcessingUrl("/j_spring_security_check")
+                .failureUrl("/login?error")
+                .usernameParameter("j_username")
+                .passwordParameter("j_password")
+                .permitAll();
         http.logout()
                 .permitAll()
                 .logoutUrl("/logout")
