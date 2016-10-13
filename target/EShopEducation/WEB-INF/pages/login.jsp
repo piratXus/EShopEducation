@@ -13,16 +13,13 @@
     <title>Login page</title>
 </head>
 <body>
-    <c:if test="${error}!=null">
         <h3>${error}</h3>
-    </c:if>
-    <form action=/j_spring_security_check" method="post">
+    <form action="<c:url value='/j_spring_security_check'/>" method="post">
         <label>Username
         <input type="text" name="j_username" value="" placeholder="Username or Email"></label>
         <label>Password
         <input type="password" name="j_password" value="" placeholder="Password"></label>
         <input type="submit" value="Access" name="submit">
-        <input type="hidden" name="_csrf.parametrName" value="_csrf.token"/>
     </form>
 </body>
 </html>

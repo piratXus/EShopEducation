@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/admin")
 public class AdminController {
-    @Secured(value = {"ADMIN","SUPERADMIN"})
+//    @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/main", method= RequestMethod.GET)
     public ModelAndView mainPage(ModelAndView modelAndView){
         modelAndView.setViewName("/admin/main");

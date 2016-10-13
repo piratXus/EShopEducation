@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <html>
 <head>
     <title>Basket</title>
@@ -15,7 +16,10 @@
 </head>
 <body>
   <h1>Menu vertical</h1>
-  <%--<%@ include file="logout.jsp"%>--%>
+  <p>Your login <sec:authentication property="username" ></p>
+    <sec:authorize access="isAuthenticated">
+        <%@ include file="logout.jsp"%>
+    </sec:authorize>
   <c:if test="${!(goodsInBasket.isEmpty())}">
     <c:forEach items="${goodsInBasket}" var="basket">
       <form action="/deletebasket" method="post">

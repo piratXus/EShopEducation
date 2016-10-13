@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception{
         auth
-                .inMemoryAuthentication().withUser("vasia").password("vasia123").roles("ADMIN","SUPERADMIN","BUYER");
+                .inMemoryAuthentication().withUser("vasia").password("vasia123").roles("SELLER");
     }
 
     @Override
@@ -28,17 +28,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http.csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/resources/**", "/**").permitAll()
+                .antMatchers("/resources/**").permitAll()
+                .antMatchers("/","/home").permitAll()
                 .antMatchers("/basket/**").permitAll()
-//                .antMatchers("/admin/**").access("hasRole('ADMIN') and hasRole('SUPERADMIN')")
-                .anyRequest().authenticated()
+                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+//                .anyRequest().authenticated()
 //                .anyRequest().permitAll()
-                .and()
-                .exceptionHandling().accessDeniedPage("/errors/AccessDenied")
-                .and().formLogin().defaultSuccessUrl("/home", false)
                 .and();
-
-        System.out.println("Security config");
 
         http.formLogin().loginPage("/login")
                 .loginProcessingUrl("/j_spring_security_check")
@@ -51,7 +47,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .permitAll()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/login?logout")
-                .invalidateHttpSession(true);
+                .invalidateHttpSession(true)
+                .and().exceptionHandling().accessDeniedPage("/errors/AccessDenied");
 
     }
 }
