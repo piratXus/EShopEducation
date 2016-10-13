@@ -15,6 +15,7 @@
 </head>
 <body>
   <h1>Menu vertical</h1>
+  <p><%=request.getUserPrincipal().getName()%></p>
   <%--<%@ include file="logout.jsp"%>--%>
   <c:if test="${!(goodsInBasket.isEmpty())}">
     <c:forEach items="${goodsInBasket}" var="basket">
