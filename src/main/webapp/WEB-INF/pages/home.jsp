@@ -16,6 +16,6 @@
 <c:forEach items="${mapper}" var="map">
     <p>${map.key} - ${map.value}</p>
 </c:forEach>
-<a href="/basket">Basket</a>
+<a href="/basket/findbasket">Basket</a>
 </body>
 </html>

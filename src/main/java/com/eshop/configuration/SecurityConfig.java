@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers("/","/home").permitAll()
                 .antMatchers("/basket/**").permitAll()
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-//                .anyRequest().authenticated()
+                .anyRequest().authenticated()
 //                .anyRequest().permitAll()
                 .and();
 

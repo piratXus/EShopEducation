@@ -16,18 +16,17 @@
 </head>
 <body>
   <h1>Menu vertical</h1>
-  <p>Your login <sec:authentication property="username" ></p>
-    <sec:authorize access="isAuthenticated">
+    <sec:authorize access="isAuthenticated()">
         <%@ include file="logout.jsp"%>
     </sec:authorize>
   <c:if test="${!(goodsInBasket.isEmpty())}">
     <c:forEach items="${goodsInBasket}" var="basket">
-      <form action="/deletebasket" method="post">
+      <form action="/basket/deletebasket" method="post">
           <div>
-              <h4 style="display: inline-block">${basket.getName_seller()}</h4>
-              <h4 style="display: inline-block">${basket.getName_goods()}</h4>
-              <h4 style="display: inline-block">${basket.getPrice_things()}</h4>
-              <h4 style="display: inline-block">${basket.getCount_things()}</h4>
+              <h4>${basket.getName_seller()}</h4>
+              <h4>${basket.getName_goods()}</h4>
+              <h4>${basket.getPrice_things()}</h4>
+              <h4>${basket.getCount_things()}</h4>
               <input type="hidden" value="${basket.getId()}" name="key"/>
               <button type="submit" value="Delete" style="display: inline-block">Delete</button>
           </div>

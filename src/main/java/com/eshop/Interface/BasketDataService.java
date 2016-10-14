@@ -21,8 +21,8 @@ public interface BasketDataService {
             "count_things COUNT_THINGS" +
             " FROM basket where id_user = ?";
     String insertQuery = "Insert into basket (id_goods, id_user, id_seller, count_things, price_things) values(?,?,?,?,?)";
-    List findAllItemsForUser(Long id_user);
-    List deleteItemUser(Long id_user, Integer basket);
-    String addItemUserInBasket(Long id_user, Objects objects);
+    List findAllItemsForUser(String id_user);
+    List deleteItemUser(String id_user, Integer basket);
+    String addItemUserInBasket(String id_user, Objects objects);
 
 }

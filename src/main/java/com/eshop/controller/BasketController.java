@@ -19,14 +19,14 @@ public class BasketController {
     BasketDataService basketData;
 
     @RequestMapping(value="/findbasket", method= RequestMethod.GET)
-    public ModelAndView Basket(ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
+    public ModelAndView Basket(ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") String userCookie){
         modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.findAllItemsForUser(userCookie)));
         modelAndView.setViewName("basket");
         return modelAndView;
     }
 
     @RequestMapping(value="/deletebasket", method= RequestMethod.POST)
-    public ModelAndView BasketDelete(@RequestParam("key") Integer basket,ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
+    public ModelAndView BasketDelete(@RequestParam("key") Integer basket,ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") String userCookie){
         System.out.println(basket);
         modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.deleteItemUser(userCookie, basket)));
         modelAndView.setViewName("basket");
