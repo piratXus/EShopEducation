@@ -1,5 +1,9 @@
 package com.eshop.controller;
 
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +28,18 @@ public class LogInOutController {
             modelAndView.addObject("msg","You've been logged out successfully!");
         }
         modelAndView.setViewName("login");
+        return modelAndView;
+    }
+
+    @RequestMapping("/errors/AccessDenied")
+    public ModelAndView accessDenied(ModelAndView modelAndView){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (!(auth instanceof AnonymousAuthenticationToken)) {
+            UserDetails userDetail = (UserDetails) auth.getPrincipal();
+            modelAndView.addObject("username", userDetail.getUsername());
+        }
+        modelAndView.setViewName("/errors/AccessDenied");
         return modelAndView;
     }
 }

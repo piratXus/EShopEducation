@@ -40,7 +40,7 @@ public class BasketDataServiceImpl implements BasketDataService {
             dataList.add(basket);
         }
         Basket basket = new Basket();
-        basket.setId(1);
+        basket.setId(2);
         basket.setName_goods("Ked");
         basket.setName_seller("Bess");
         basket.setPrice_things(12);

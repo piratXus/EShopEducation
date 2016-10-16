@@ -46,7 +46,7 @@ public class DataConectionSourseConfig {
         return ds;
     }
 
-    @Bean
+    @Bean(name="JdbcTemplate")
     public JdbcOperations jdbcOperations(){
         return new JdbcTemplate(dataSource());
     }
