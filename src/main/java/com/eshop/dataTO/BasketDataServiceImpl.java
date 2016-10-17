@@ -53,7 +53,7 @@ public class BasketDataServiceImpl implements BasketDataService {
         System.out.println("Delete Item in table basket!");
         jdbcTemplate.update(deleteQuery, new Object[] {id_user, basket});
         System.out.println(dataList.stream().filter(basket1 -> basket.equals(basket1.getId())));
-        dataList.remove(dataList.stream().filter(basket1 -> basket.equals(basket1.getId())));
+        dataList.remove(dataList.stream().filter(basket1 -> basket.equals(basket1.getId())).findAny().orElse(null));
         System.out.println(dataList.isEmpty());
         return dataList;
     }
