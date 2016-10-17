@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Created by User on 11.10.2016.
  */
 @Controller
-public class LogInOutController {
+public class LogInOutErrorsController {
     @RequestMapping(value="/login", method= RequestMethod.GET)
     public ModelAndView loginPage(
             ModelAndView modelAndView,

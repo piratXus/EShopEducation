@@ -5,5 +5,6 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 /**
  * Created by User on 10.10.2016.
  */
+@Deprecated
 public class SecurityInit /*extends AbstractSecurityWebApplicationInitializer*/ {
 }
