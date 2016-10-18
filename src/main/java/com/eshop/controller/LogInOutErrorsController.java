@@ -1,5 +1,6 @@
 package com.eshop.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,6 +16,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class LogInOutErrorsController {
+
+    private static final Logger log = Logger.getLogger(LogInOutErrorsController.class);
+
     @RequestMapping(value="/login", method= RequestMethod.GET)
     public ModelAndView loginPage(
             ModelAndView modelAndView,

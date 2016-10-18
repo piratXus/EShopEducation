@@ -1,6 +1,7 @@
 package com.eshop.controller;
 
 import com.eshop.dataTO.CollectData;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -16,6 +17,9 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 public class HomeController {
+
+    private static final Logger log = Logger.getLogger(HomeController.class);
+
     @RequestMapping(value = {"/","/home"},method = RequestMethod.GET)
     public ModelAndView homeController(ModelAndView modelAndView,HttpServletResponse response, @CookieValue(value="userIndet", defaultValue = "0") Long userCookie){
         modelAndView.addAllObjects( new ModelMap().addAttribute("firstString", "Hello world!!!").addAttribute("mapper", new CollectData().addDataToMap()));

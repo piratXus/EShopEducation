@@ -2,7 +2,7 @@ package com.eshop.dataTO;
 
 import com.eshop.Interface.BasketDataService;
 import com.eshop.model.Basket;
-import org.apache.commons.logging.impl.Log4JLogger;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,6 +19,8 @@ import java.util.Objects;
 public class BasketDataServiceImpl implements BasketDataService {
 
     private JdbcTemplate jdbcTemplate;
+
+    static final Logger log = Logger.getLogger(BasketDataService.class);
 
     @Autowired
     public BasketDataServiceImpl(JdbcOperations jdbcOperations){
@@ -39,22 +41,15 @@ public class BasketDataServiceImpl implements BasketDataService {
             basket.setCount_things(Integer.parseInt(String.valueOf(row.get("COUNT_THINGS"))));
             dataList.add(basket);
         }
-        Basket basket = new Basket();
-        basket.setId(2);
-        basket.setName_goods("Ked");
-        basket.setName_seller("Bess");
-        basket.setPrice_things(12);
-        basket.setCount_things(2);
-        dataList.add(basket);
         return dataList;
     }
     @Override
     public List deleteItemUser(String id_user, Integer basket){
         System.out.println("Delete Item in table basket!");
         jdbcTemplate.update(deleteQuery, new Object[] {id_user, basket});
-        System.out.println(dataList.stream().filter(basket1 -> basket.equals(basket1.getId())));
+        log.debug(dataList.stream().filter(basket1 -> basket.equals(basket1.getId())));
         dataList.remove(dataList.stream().filter(basket1 -> basket.equals(basket1.getId())).findAny().orElse(null));
-        System.out.println(dataList.isEmpty());
+        log.info(dataList.isEmpty());
         return dataList;
     }
 
