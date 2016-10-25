@@ -10,12 +10,12 @@ import java.util.List;
  */
 public interface GoodsDataService {
     String findAll = "Select id, id_company, (Select name from eshop.company where id = id_company) name_company, description," +
-            "title, price from eshop.goods;";
-    String insertGoods = "Insert into goods (id_company, id_img, description, title, price) values (?,?,?,?,?);";
+            "title from eshop.goods;";
+    String insertGoods = "Insert into goods (id_company, id_img, description, title) values (?,?,?,?);";
     String updateGoods = "Update goods set id_company = ?, id_img = ?, description = ?, title = ?," +
-            "title = ? where id = ?;";
+            "where id = ?;";
     String selectById = "Select id, id_company, (Select name from eshop.company where id = id_company) name_company, description," +
-            "title, price from eshop.goods;";
+            "title from eshop.goods;";
     String deleteGoods = "Delete goods where id = ?;";
 
     List FindAllGoods();
@@ -23,4 +23,5 @@ public interface GoodsDataService {
     String UpdateGoodsById(Goods goods);
     String DaleteGoodsById(Long id);
     Object EditGoods(Long id);
+    List GetListGoods();
 }

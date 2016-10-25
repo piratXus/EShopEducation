@@ -63,7 +63,6 @@ create table eshop.goods (
   id_img integer,
   description varchar(3000),
   title varchar(3000),
-  price integer,
   primary key (id),
   foreign key (id_company) references eshop.company(id),
   foreign key (id_img) references eshop.img(id)
@@ -74,6 +73,7 @@ create table eshop.goods_seller(
   id_goods integer,
   count_things integer,
   status_goods integer,
+  price NUMBER (20,4),
   foreign key (id_seller) references eshop.seller(id),
   foreign key (id_goods) references eshop.goods(id)
 );
@@ -132,7 +132,7 @@ Insert into eshop.img (id,alt) values (1,"Bosch");
 Insert into eshop.content_info (id,category, content) VALUES (1,1, "Nothing");
 Insert into eshop.seller (id,name,full_name,id_content_info,id_img) values(1,"Gertruda","Ltd Gertruda",1,1);
 insert into eshop.company (id,name) values (1,"Bosch");
-insert into eshop.goods (id,id_company,id_img,description,title,price) VALUES (1,1,1,"Hrttt","mixer",12);
+insert into eshop.goods (id,id_company,id_img,description,title) VALUES (1,1,1,"Hrttt","mixer");
 insert into eshop.basket (id,id_goods, id_user, id_seller, count_things, price_things) VALUES (1,1,1,1,2,12);
 
 

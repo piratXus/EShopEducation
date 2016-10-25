@@ -21,7 +21,6 @@
                     <p>${goods.getName_company()}</p>
                     <p>${goods.getTitle()}</p>
                     <p>${goods.getDecription()}</p>
-                    <p>${goods.getPrice()}</p>
                     <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')">
                         <a href="/editgoods/${goods.getId()}">Edit</a>
                     </sec:authorize>

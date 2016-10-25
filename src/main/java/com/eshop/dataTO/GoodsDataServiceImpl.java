@@ -40,7 +40,6 @@ public class GoodsDataServiceImpl implements GoodsDataService {
                 goods.setName_company(String.valueOf(row.get("NAME_COMPANY")));
                 goods.setTitle(String.valueOf(row.get("TITLE")));
                 goods.setDescription(String.valueOf(row.get("DESCRIPTION")));
-                goods.setPrice(Integer.parseInt(String.valueOf(row.get("PRICE"))));
 
                 dataGoods.add(goods);
             }
@@ -55,12 +54,13 @@ public class GoodsDataServiceImpl implements GoodsDataService {
         String msg;
         try {
             jdbcTemplate.update(insertGoods, new java.lang.Object[]{goods.getId_company(), null, goods.getDescription(),
-                    goods.getTitle(), goods.getPrice()});
+                    goods.getTitle()});
             msg = "Successfully!";
         } catch (Exception e){
             log.error(e);
             msg = "Error, please go to home page!";
         }
+        dataGoods.add(goods);
 
         return msg;
     }
@@ -70,13 +70,14 @@ public class GoodsDataServiceImpl implements GoodsDataService {
         String msg;
         try {
             jdbcTemplate.update(updateGoods, new java.lang.Object[]{goods.getId_company(), null, goods.getDescription(),
-                    goods.getTitle(), goods.getPrice()});
+                    goods.getTitle()});
             msg = "Successfully!";
         } catch (Exception e){
             log.error(e);
             msg = "Error, please go to home page!";
         }
-
+        dataGoods.remove(dataGoods.stream().filter(dataGoods1-> dataGoods.equals(dataGoods1)).findAny().orElse(null));
+        dataGoods.add(goods);
         return msg;
     }
 
@@ -90,11 +91,17 @@ public class GoodsDataServiceImpl implements GoodsDataService {
             log.error(e);
             msg = "Error, please go to home page!";
         }
+        dataGoods.remove(dataGoods.stream().filter(dataGoods1 -> id.equals(dataGoods1.getId())).findAny().orElse(null));
         return msg;
     }
 
     @Override
     public Object EditGoods(Long id){
         return jdbcTemplate.queryForObject(selectById, new Object[]{id},Goods.class);
+    }
+
+    @Override
+    public List GetListGoods(){
+        return dataGoods;
     }
 }

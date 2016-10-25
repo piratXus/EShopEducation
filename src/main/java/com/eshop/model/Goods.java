@@ -17,7 +17,6 @@ public class Goods {
 
     private String Title;
 
-    private int Price;
 
     public long getId() {
         return Id;
@@ -60,11 +59,4 @@ public class Goods {
         Title = title;
     }
 
-    public int getPrice() {
-        return Price;
-    }
-
-    public void setPrice(int price) {
-        Price = price;
-    }
 }

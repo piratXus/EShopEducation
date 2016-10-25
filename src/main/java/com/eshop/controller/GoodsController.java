@@ -22,14 +22,23 @@ public class GoodsController {
 
     @RequestMapping(value = "/allgoods", method = RequestMethod.GET)
     public ModelAndView AllGoods(ModelAndView modelAndView){
-        modelAndView.addAllObjects(new ModelMap().addAttribute("goodsList",goodsDataService.FindAllGoods()));
+        modelAndView.addAllObjects(
+                new ModelMap()
+                        .addAttribute("goodsList",goodsDataService.FindAllGoods()
+                        )
+        );
         modelAndView.setViewName("/goods/allgoods");
         return modelAndView;
     }
 
     @RequestMapping(value = "/newgoods", method = RequestMethod.POST)
     public ModelAndView insertNewGoods (ModelAndView modelAndView, @RequestAttribute(name = "goods") Object goods){
-        modelAndView.addAllObjects(new ModelMap().addAttribute("msg", goodsDataService.InsertInGoods((Goods) goods)));
+        modelAndView.addAllObjects(
+                new ModelMap()
+                        .addAttribute("msg", goodsDataService.InsertInGoods((Goods) goods))
+                        .addAttribute("goodsList", goodsDataService.GetListGoods()
+                        )
+        );
         modelAndView.setViewName("/goods/allgoods");
         return modelAndView;
     }
@@ -37,7 +46,11 @@ public class GoodsController {
 
     @RequestMapping(value = "/editgoods/{id}", method = RequestMethod.GET)
     public ModelAndView editItemGoods(@PathVariable("id") Long id, ModelAndView modelAndView){
-        modelAndView.addAllObjects(new ModelMap().addAttribute("goods", goodsDataService.EditGoods(id)));
+        modelAndView.addAllObjects(
+                new ModelMap()
+                        .addAttribute("goods", goodsDataService.EditGoods(id)
+                        )
+        );
         modelAndView.setViewName("/goods/editForm");
         return modelAndView;
     }
@@ -46,7 +59,12 @@ public class GoodsController {
     public ModelAndView updateGoods(ModelAndView modelAndView, @RequestAttribute(name="goodsOne") Object goods){
         log.info(goods);
         log.info("update goods item id ");
-        modelAndView.addAllObjects(new ModelMap().addAttribute("msg", goodsDataService.UpdateGoodsById((Goods)goods)));
+        modelAndView.addAllObjects(
+                new ModelMap()
+                        .addAttribute("msg", goodsDataService.UpdateGoodsById((Goods)goods))
+                        .addAttribute("goodsList", goodsDataService.GetListGoods()
+                        )
+        );
         modelAndView.setViewName("/goods/allgoods");
         return modelAndView;
     }
@@ -54,7 +72,12 @@ public class GoodsController {
     @RequestMapping(value = "detetegoods/{id}", method = RequestMethod.GET)
     public ModelAndView deleteGoods(ModelAndView modelAndView, @PathVariable("id") Long id ){
         log.info("Delete goods item id"+id);
-        modelAndView.addAllObjects(new ModelMap().addAttribute("msg", goodsDataService.DaleteGoodsById(id)));
+        modelAndView.addAllObjects(
+                new ModelMap()
+                        .addAttribute("msg", goodsDataService.DaleteGoodsById(id))
+                        .addAttribute("goodsList", goodsDataService.GetListGoods()
+                        )
+        );
         modelAndView.setViewName("/goods/allgoods");
         return modelAndView;
     }
