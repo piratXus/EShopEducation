@@ -1344,7 +1344,7 @@
     </procedure>
   </data-source>
   <data-source name="MySQL - eshop@localhost" uuid="3e5454ca-98b3-4bcd-98d8-680267efd96b">
-    <database-info product="MySQL" version="5.7.15-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="MySQL" version="5.7.16-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -1387,7 +1387,6 @@
       <column name="id_img" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="description" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
       <column name="title" sqlType="VARCHAR" precision="3000" scale="0" nullable="true" jdbcType="12"/>
-      <column name="price" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="goods_ibfk_1" columns="id_company" ref-table="company" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="goods_ibfk_2" columns="id_img" ref-table="img" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
@@ -1400,6 +1399,7 @@
       <column name="id_goods" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="count_things" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="status_goods" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="price" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <foreign-key name="goods_seller_ibfk_1" columns="id_seller" ref-table="seller" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="goods_seller_ibfk_2" columns="id_goods" ref-table="goods" ref-schema="" ref-catalog="eshop" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
