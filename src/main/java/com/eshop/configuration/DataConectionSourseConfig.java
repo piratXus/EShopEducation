@@ -3,6 +3,7 @@ package com.eshop.configuration;
 import org.apache.log4j.Logger;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.apache.tomcat.jdbc.pool.DataSource;
+import org.postgresql.ds.PGPoolingDataSource;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +23,8 @@ public class DataConectionSourseConfig {
     public DataSource dataSource(){
         DataSource ds = new DataSource();
         PoolProperties p = new PoolProperties();
-        p.setUrl("jdbc:mysql://127.0.0.1:3306/eshop");
-        p.setDriverClassName("com.mysql.jdbc.Driver");
+        p.setUrl("jdbc:postgresql://localhost:5432/eshop");
+        p.setDriverClassName("org.postgresql.Driver");
         p.setUsername("root");
         p.setPassword("root123");
         p.setJmxEnabled(true);

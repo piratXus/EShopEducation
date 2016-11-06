@@ -23,7 +23,7 @@ public class BasketController {
 
     @RequestMapping(value="/findbasket", method= RequestMethod.GET)
     public ModelAndView Basket(ModelAndView modelAndView, @CookieValue(value="userIndet", defaultValue = "0") String userCookie){
-        modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.findAllItemsForUser(userCookie)));
+        modelAndView.addAllObjects(new ModelMap().addAttribute("goodsInBasket", basketData.findAllItemsForUser(Integer.parseInt(userCookie))));
         modelAndView.setViewName("basket");
         log.info("Controller work all is good!!!");
         return modelAndView;

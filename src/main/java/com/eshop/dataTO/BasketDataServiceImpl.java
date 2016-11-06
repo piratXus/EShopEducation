@@ -26,7 +26,7 @@ public class BasketDataServiceImpl implements BasketDataService {
 //    }
 
     @Override
-    public List findAllItemsForUser(String id_user){
+    public List findAllItemsForUser(Integer id_user){
 
 //        List<Map<String,Object>> rowsQuery = jdbcTemplate.queryForList(querySelect, new Object[] {id_user});
 //        for (Map row : rowsQuery) {
