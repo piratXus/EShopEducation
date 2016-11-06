@@ -15,6 +15,8 @@ import org.springframework.stereotype.Component;
 @Scope("prototype")
 public class Basket {
 
+    Basket(){}
+
     private int id;
 
     private String name_goods;
@@ -26,6 +28,15 @@ public class Basket {
     private int count_things;
 
     private int price_things;
+
+    Basket(int id, String name_goods,String full_user, String name_seller, int count_things, int price_things){
+        super();
+        this.id = id;
+        this.name_goods = name_goods;
+        this.name_seller = name_seller;
+        this.count_things = count_things;
+        this.price_things = price_things;
+    }
 
     public int getId() {
         return id;

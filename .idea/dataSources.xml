@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2608035127">
+  <component name="DataSourceManagerImpl" format="xml" hash="1652917139">
     <data-source source="LOCAL" name="MySQL - sys@localhost" uuid="41563c5f-546b-4e52-80bc-69b594375bfe">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -27,6 +27,13 @@
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
       </driver-properties>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - sys@localhost" uuid="5cd8e16f-d95e-47b2-8c0c-1c0c21750edd">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/sys</jdbc-url>
       <libraries />
     </data-source>
   </component>

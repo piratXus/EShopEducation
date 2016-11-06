@@ -13,5 +13,10 @@
       <schema-pattern>eshop.*</schema-pattern>
       <default-schemas>eshop.*</default-schemas>
     </data-source>
+    <data-source name="PostgreSQL - sys@localhost" uuid="5cd8e16f-d95e-47b2-8c0c-1c0c21750edd">
+      <secret-storage>memory</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
   </component>
 </project>

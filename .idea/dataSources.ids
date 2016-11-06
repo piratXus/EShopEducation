@@ -1469,4 +1469,7 @@
       <foreign-key name="user_role_ibfk_1" columns="user_name" ref-table="user_login" ref-schema="" ref-catalog="eshop" ref-columns="user_name" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
   </data-source>
+  <data-source name="PostgreSQL - sys@localhost" uuid="5cd8e16f-d95e-47b2-8c0c-1c0c21750edd">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
