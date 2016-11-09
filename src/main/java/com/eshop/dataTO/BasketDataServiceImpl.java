@@ -52,7 +52,7 @@ public class BasketDataServiceImpl implements BasketDataService {
 //        }
         dataList.addAll(basketMapper.findBasketUserByIdUser(id_user));
 
-        email.sendMessage("werwolf959@gmail.com", textMsg);
+        email.sendMessage("werwolf959@gmail.com", textMsg, "Confirm message");
 
         return dataList;
     }
