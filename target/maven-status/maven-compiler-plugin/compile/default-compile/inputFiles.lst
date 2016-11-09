@@ -4,6 +4,7 @@
 /media/raks/Новый том/task/EShopEducation/src/main/java/com/eshop/controller/AdminController.java
 /media/raks/Новый том/task/EShopEducation/src/main/java/com/eshop/model/Basket.java
 /media/raks/Новый том/task/EShopEducation/src/main/java/com/eshop/dataTO/BasketDataServiceImpl.java
+/media/raks/Новый том/task/EShopEducation/src/main/java/com/eshop/configuration/EmailComponent.java
 /media/raks/Новый том/task/EShopEducation/src/main/java/com/eshop/controller/BasketController.java
 /media/raks/Новый том/task/EShopEducation/src/main/java/com/eshop/configuration/SecurityConfig.java
 /media/raks/Новый том/task/EShopEducation/src/main/java/com/eshop/controller/HomeController.java

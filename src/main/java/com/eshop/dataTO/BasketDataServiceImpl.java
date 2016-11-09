@@ -1,6 +1,7 @@
 package com.eshop.dataTO;
 
 import com.eshop.Interface.BasketDataService;
+import com.eshop.configuration.EmailComponent;
 import com.eshop.mapper.BasketMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by raks on 20.09.16.
@@ -21,12 +23,21 @@ public class BasketDataServiceImpl implements BasketDataService {
 
     @Autowired
     BasketMapper basketMapper;
+
+    @Autowired
+    EmailComponent email;
 //    public BasketDataServiceImpl(JdbcOperations jdbcOperations){
 //        this.jdbcTemplate = (JdbcTemplate) jdbcOperations;
 //    }
 
     @Override
     public List findAllItemsForUser(Integer id_user){
+
+        String token = UUID.randomUUID().toString();
+
+        String  textMsg = "<h1>Dear, friend!</h1>" +
+                "<p>This message for confirm your email!</p>" +
+                "<p>Please confirm your email clicked this link <a href=localhost:8080/"+token+"></p>";
 
 //        List<Map<String,Object>> rowsQuery = jdbcTemplate.queryForList(querySelect, new Object[] {id_user});
 //        for (Map row : rowsQuery) {
@@ -40,6 +51,8 @@ public class BasketDataServiceImpl implements BasketDataService {
 //            dataList.add(basket);
 //        }
         dataList.addAll(basketMapper.findBasketUserByIdUser(id_user));
+
+        email.sendMessage("werwolf959@gmail.com", textMsg);
 
         return dataList;
     }

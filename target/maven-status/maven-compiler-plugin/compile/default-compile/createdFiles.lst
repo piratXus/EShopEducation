@@ -3,6 +3,7 @@ com/eshop/dataTO/BasketDataServiceImpl.class
 com/eshop/mapper/BasketMapper.class
 com/eshop/configuration/SecurityConfig.class
 com/eshop/Interface/BasketDataService.class
+com/eshop/configuration/EmailComponent.class
 com/eshop/controller/BasketController.class
 com/eshop/dataTO/CollectData.class
 com/eshop/model/Basket.class
